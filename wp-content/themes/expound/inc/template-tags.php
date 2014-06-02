@@ -129,6 +129,9 @@ function expound_posted_on() {
 		$output_time = $regular_time;
 
 	// translators: 1: who, 2: when
+	// %1$s will print the result of the first sprintf (author sprintf)
+	// %2$s will print the second sprintf, the time
+	// the first sprintf is jacked up, why is %s called twice? why are there two arguments? it should pull the authors once, not both times
 	printf( __( '%1$s / %2$s', 'expound' ),
 		sprintf( '<a class="author" rel="author" href="%s">%s</a>', esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ), get_the_author() ),
 		sprintf( '<a class="entry-date" href="%s">%s</a>', esc_url( get_permalink() ), $output_time )
